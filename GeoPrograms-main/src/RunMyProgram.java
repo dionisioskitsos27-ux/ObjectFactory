@@ -3,7 +3,7 @@ public class RunMyProgram {
     public static void main(String[] args) {
 
         World run;
-        run = (new GHImage());
+        run = ( new ParentPicture());
         run.planeIcon = "plane.png";
         run.pictureFileName = "meadow.png";
         run.HEIGHT=800;
