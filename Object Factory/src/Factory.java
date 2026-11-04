@@ -5,6 +5,7 @@ public class Factory {
     public boolean isOpen = true;
     public int yearFounded = 2023;
     public Donuts donutOrder1;
+    ;
     int randomNumber;
     int randomNumber2;
 
@@ -29,7 +30,7 @@ Factory a = new Factory ();
 
         randomNumber = (int) (Math.random() * 100) +1; //1-100 donuts
         // make an object of type Donuts
-        donutOrder1 = new Donuts ( randomNumber);
+        donutOrder1 = new Donuts ( randomNumber, "glazzed", true);
         System.out.println(donutOrder1.numberOfDonuts + " Donuts Please ");
         System.out.println(" It Is " + donutOrder1.hasFilling + " that I want filling");
         System.out.println(" I would like " + donutOrder1.frostingType + " Please ") ;
@@ -37,16 +38,23 @@ Factory a = new Factory ();
         donutOrder1.numberOfDonuts = donutOrder1.numberOfDonuts + 1;
         System.out.println(donutOrder1.numberOfDonuts + " Donuts Please ");
 
+        donutOrder1 = new Steaks (randomNumber, donutOrder1.frostingType, , true);
+        System.out.println(steakOrder1.numberOfSteaks + "Steaks Please");
+
+
 
         randomNumber2 = (int) (Math.random() * 45) +1;
-        donutOrder2 = new Donuts(6);
+
+
+        donutOrder2 = new Donuts(randomNumber, "chocolate", false);
         System.out.println(donutOrder2.numberOfDonuts + " Donuts Please ");
         System.out.println(" It Is " + donutOrder2.hasFilling + " that I  Dont want filling");
         System.out.println(" I would like " + donutOrder2.frostingType + " Please ") ;
        donutOrder2. numberOfDonuts = donutOrder1.numberOfDonuts * 2;
         System.out.println(donutOrder2.numberOfDonuts + " Donuts Please ");
 
-
+        donutOrder2.addDonut();
+        donutOrder2.changeFrostingType("jelly");
         donutOrder2.printInfo();
 
     }

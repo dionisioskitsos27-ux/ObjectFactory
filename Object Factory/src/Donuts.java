@@ -3,7 +3,9 @@ public class Donuts {
 // donuts need instance variables
     // frosting tyope
     public String frostingType;
-    //is there filling or no filling
+
+
+        //is there filling or no filling
     public boolean hasFilling;
     //how many donuts
     public int numberOfDonuts;
@@ -13,10 +15,15 @@ public class Donuts {
     //method
     //do not say void
     // has to match exactly the name of the class
-    public Donuts(int pNumberOfDonuts){
 
-        frostingType = "boston creme";
-        hasFilling = true;
+
+        public Donuts(int pNumberOfDonuts, String pFrostingType, boolean pHasFilling){
+            frostingType = pFrostingType;
+            hasFilling = true;
+
+            numberOfDonuts = pNumberOfDonuts;
+        frostingType = pFrostingType;
+        hasFilling = pHasFilling;
         numberOfDonuts = pNumberOfDonuts;
 
 
@@ -28,6 +35,22 @@ public class Donuts {
         //todo: use souts to print the instance variables
         System.out.println(frostingType);
         System.out.println("the number of donuts is " + numberOfDonuts);
+
+    }
+
+    //todo: make a method called addDonut
+    public void addDonut(){
+           // numberOfDonuts = numberOfDonuts +1;
+            numberOfDonuts++;
+
+    }
+
+    //todo: make a  new method called changeFrostingType
+
+    //.=todo: govbe method a parameter called newFrostingType
+    public void changeFrostingType(String newFrostingType){
+            frostingType = newFrostingType;
+
 
     }
 
