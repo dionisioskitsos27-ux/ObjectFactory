@@ -39,12 +39,14 @@ public class BasicGameApp implements Runnable {
    
 	public BufferStrategy bufferStrategy;
 	public Image astroPic;
+	public Image TomPic;
 
    //Declare the objects used in the program
    //These are things that are made up of more than one variable type
 	public Astronaut astro;
 
 	public Astronaut astro2;
+	public Astronaut astro3;
 
 public int randomNumber;
    // Main method definition
@@ -66,8 +68,12 @@ public int randomNumber;
       //variable and objects
       //create (construct) the objects needed for the game and load up 
 		astroPic = Toolkit.getDefaultToolkit().getImage("astronaut.png"); //load the picture
+		TomPic = Toolkit.getDefaultToolkit().getImage("Tom.png"); //load the picture
+
 		astro = new Astronaut(10,100);
-		astro2 = new Astronaut(300,10);
+		astro2 = new Astronaut((int) (Math.random() *900), (int) (Math.random() *600));
+		astro3 = new Astronaut((int) (Math.random() *600), (int) (Math.random() *150));
+
 		System.out.println(astro.dx);
 		astro.dx = 25;
 astro2.dy = randomNumber;
@@ -102,6 +108,23 @@ astro2.dy = randomNumber;
       //calls the move( ) code in the objects
 		astro.move();
 		astro2.move();
+		astro3.move();
+
+
+
+	}
+
+	public void crashing(){
+		if(astro.hitbox.intersects(astro2.hitbox)){
+			System.out.println("crash");
+			astro.width = astro.width +10;
+			astro.height = astro.height +10;
+
+			astro2.width = astro2.width +10;
+			astro2.height = astro2.height +10;
+
+
+		}
 
 	}
 	
@@ -156,8 +179,11 @@ astro2.dy = randomNumber;
 
 
       //draw the image of the astronaut
+		g.drawImage(TomPic, 0, 0, WIDTH, HEIGHT, null);
+
 		g.drawImage(astroPic, astro.xpos, astro.ypos, astro.width, astro.height, null);
 		g.drawImage(astroPic, astro2.xpos, astro2.ypos, astro2.width, astro2.height, null);
+		g.drawImage(astroPic, astro3.xpos, astro3.ypos, astro3.width, astro3.height, null);
 
 		g.dispose();
 
