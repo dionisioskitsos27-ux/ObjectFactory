@@ -16,7 +16,7 @@ public class Astronaut {
     public int height;
     public boolean isAlive;            //a boolean to denote if the hero is alive or dead.
 public Rectangle hitbox;
-
+public boolean isCrashing;
     // METHOD DEFINITION SECTION
 
     // Constructor Definition
@@ -34,6 +34,9 @@ public Rectangle hitbox;
         height = 60;
         isAlive = true;
         hitbox = new Rectangle(xpos,ypos, width, height);
+isCrashing = false;
+
+
 
     } // constructor
 
@@ -49,7 +52,7 @@ public Rectangle hitbox;
     //todo: make a method called bounce
 
     public void bounce() {
-        if (xpos > 940) {
+        if (xpos > 1000) {
             dx = -dx;
 
 
@@ -62,7 +65,7 @@ public Rectangle hitbox;
             dx = -dx;
 
         }
-        if (ypos > 650){
+        if (ypos > 700){
 
             dy = -dy;
         }

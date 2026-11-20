@@ -105,6 +105,7 @@ astro2.dy = randomNumber;
 
 	public void moveThings()
 	{
+		crashing();
       //calls the move( ) code in the objects
 		astro.move();
 		astro2.move();
@@ -117,12 +118,20 @@ astro2.dy = randomNumber;
 	public void crashing(){
 		if(astro.hitbox.intersects(astro2.hitbox)){
 			System.out.println("crash");
-			astro.width = astro.width +10;
-			astro.height = astro.height +10;
+			System.out.println(astro.isCrashing);
+			astro.dx = -astro.dx;
+			astro2.dx = -astro2.dx;
 
-			astro2.width = astro2.width +10;
-			astro2.height = astro2.height +10;
+			astro.height = astro.height+100;
 
+			astro.isCrashing = true; //put at the bottom of method
+
+		}
+
+
+		if(!astro.hitbox.intersects(astro2.hitbox)){ //! means it isnt happening
+
+			astro.isCrashing = false;
 
 		}
 
